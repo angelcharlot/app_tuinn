@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- colores por defecto -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <!-- gray -->
+    <color name="Gray_50">#F9FAFB</color>
+    <color name="Gray_100">#F3F4F6</color>
+    <color name="Gray_200">#E5E7EB</color>
+    <color name="Gray_300">#D1D5DB</color>
+    <color name="Gray_400">#9CA3AF</color>
+    <color name="Gray_500">#6B7280</color>
+    <color name="Gray_600">#4B5563</color>
+    <color name="Gray_700">#374151</color>
+    <color name="Gray_800">#1F2937</color>
+    <color name="Gray_900">#111827</color>
+    <!-- azul -->
+    <color name="azul_50">#EBF5FF</color>
+    <color name="azul_100">#E1EFFE</color>
+    <color name="azul_200">#C3DDFD</color>
+    <color name="azul_300">#A4CAFE</color>
+    <color name="azul_400">#76A9FA</color>
+    <color name="azul_500">#3F83F8</color>
+    <color name="azul_600">#0004FF</color>
+    <color name="azul_700">#1A56DB</color>
+    <color name="azul_800">#1E429F</color>
+    <color name="azul_900">#233876</color>
+    <color name="azul_mio">#1400C6</color>
+    <color name="blanco">#FFFFFF</color>
+
+</resources>

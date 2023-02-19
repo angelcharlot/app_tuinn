@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<TableRow xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="10dp">
+
+    <TextView
+        android:id="@+id/cantidad"
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical"
+        android:textStyle="bold"
+        android:text="1" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="150dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/tipo"
+        android:layout_width="20dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/precio_venta"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="hola"
+        android:visibility="gone" />
+
+
+    <TextView
+        android:id="@+id/id_p"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="TextView"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/impresora"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="hola"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/button3_plus"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/botones"
+        android:padding="36dp" />
+
+    <Button
+        android:id="@+id/button4_subtract"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/botones_2"
+        android:padding="36dp" />
+
+</TableRow>

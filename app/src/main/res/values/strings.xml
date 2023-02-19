@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Tuinn</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="bienvenido2">Login</string>
+    <string name="campo1_email">Email</string>
+    <string name="campo2_pass">passwork</string>
+    <string name="comanda">Comanda</string>
+    <string name="productos">Productos</string>
+    <string name="logo">logo</string>
+    <string name="tuinn">Tuinn.es</string>
+</resources>

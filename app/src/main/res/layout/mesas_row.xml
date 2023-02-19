@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/mesa_nro"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:gravity="center"
+            android:text="TextView" />
+        <TextView
+            android:id="@+id/total"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingRight="10dp"
+            android:gravity="center"
+
+            android:text="TextView" />
+
+
+
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:background="@drawable/botones"
+            android:padding="36dp" />
+
+        <Button
+            android:id="@+id/btn_remove"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:background="@drawable/botones_2"
+            android:padding="36dp" />
+
+        <Button
+            android:id="@+id/btn_detalle"
+            android:layout_width="40dp"
+            android:layout_height="match_parent"
+
+            android:background="@drawable/botones_3"
+            android:padding="36dp" />
+    </TableRow>
+</androidx.constraintlayout.widget.ConstraintLayout>
