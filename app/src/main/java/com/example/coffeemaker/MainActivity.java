@@ -22,6 +22,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -70,12 +73,41 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(String response) {
 
                     if (!response.isEmpty()){
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject = new JSONObject(response);
 
-                        guardarPreferencias();
-                        Intent intent=new Intent(getApplicationContext(),principal.class);
-                        intent.putExtra("datos",response);
-                        startActivity(intent);
-                        finish();
+                        } catch (JSONException e) {
+                            throw new RuntimeException(e);
+                        }
+                        String mensaje = jsonObject.optString("mensaje");
+                        switch (mensaje) {
+                            case "1":
+                                Toast.makeText(MainActivity.this, "email invalido", Toast.LENGTH_SHORT).show();
+                                Btnlogin.setEnabled(true);
+                                spinner.setVisibility(View.GONE);
+                                break;
+                            case "2":
+                                Toast.makeText(MainActivity.this, "password invalido", Toast.LENGTH_SHORT).show();
+                                Btnlogin.setEnabled(true);
+                                spinner.setVisibility(View.GONE);
+                                break;
+                            case "3":
+                                Toast.makeText(MainActivity.this,"logueo completado", Toast.LENGTH_SHORT).show();
+
+                                guardarPreferencias();
+                                Intent intent=new Intent(getApplicationContext(),principal.class);
+                                intent.putExtra("datos",response);
+                                startActivity(intent);
+                                finish();
+
+                                break;
+                            // ...
+                            default:
+                                // código a ejecutar si la variable no es igual a ninguno de los valores anteriores
+                                break;
+                        }
+
                    }else{
                         Btnlogin.setEnabled(true);
                         spinner.setVisibility(View.GONE);
@@ -87,7 +119,32 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 spinner.setVisibility(View.GONE);
                 Btnlogin.setEnabled(true);
-                Toast.makeText(MainActivity.this, error.toString(), Toast.LENGTH_SHORT).show();
+                if (error != null && error.networkResponse != null) {
+                    int statusCode = error.networkResponse.statusCode;
+                switch (statusCode) {
+                    case 400:
+                        Toast.makeText(MainActivity.this, "Solicitud incorrecta", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 401:
+                        Toast.makeText(MainActivity.this, "No autorizado", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 403:
+                        Toast.makeText(MainActivity.this, "Prohibido", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 404:
+                        Toast.makeText(MainActivity.this, "No encontrado", Toast.LENGTH_SHORT).show();
+                        break;
+                    case 500:
+                        Toast.makeText(MainActivity.this, "Error interno del servidor", Toast.LENGTH_SHORT).show();
+                        break;
+                    default:
+                        Toast.makeText(MainActivity.this, "Error desconocido", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                }else {
+                    Toast.makeText(MainActivity.this, "Error de conexión", Toast.LENGTH_SHORT).show();
+                }
+
             }
         }){
             @Nullable
