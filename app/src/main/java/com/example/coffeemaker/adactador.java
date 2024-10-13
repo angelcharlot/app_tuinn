@@ -8,10 +8,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -63,12 +66,24 @@ public class adactador extends BaseAdapter {
             String name= producto.getJSONObject(i).getString("name");
             String id=producto.getJSONObject(i).getString("id");
             String id_impresora=producto.getJSONObject(i).getString("impresora_id");
+            String baseUrl = "http://185.141.222.250:8000/";  // Define la base de la URL
+            String imageUrl = baseUrl + producto.getJSONObject(i).getString("img");  // Concatenar base de la URL con img
             JSONArray array_presentaciones=new JSONArray(producto.getJSONObject(i).getString("presentaciones"));
 
             TextView tx1 = V.findViewById(R.id.producto_id);
             TextView tx2 = V.findViewById(R.id.producto_name);
             tx1.setText(name);
             tx2.setText(id);
+            // Configurar la ImageView
+            ImageView productImage = V.findViewById(R.id.imageP);
+            Picasso.get()
+                    .load(imageUrl) // URL de la imagen
+                    .placeholder(R.drawable.birra_logo) // Imagen de placeholder mientras carga
+                    .error(R.drawable.birra_logo) // Imagen de error si falla la carga
+                    .into(productImage); // Cargar la imagen en la ImageView
+
+
+
             V.setOnClickListener(
                     new View.OnClickListener() {
                         @Override

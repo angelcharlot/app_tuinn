@@ -9,6 +9,16 @@
     android:contextClickable="true"
     android:minHeight="100dp">
 
+    <ImageView
+        android:id="@+id/imageP"
+        android:layout_width="92dp"
+        android:layout_height="126dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/producto_id"
+        app:layout_constraintTop_toTopOf="@+id/producto_name"
+        tools:srcCompat="@tools:sample/avatars" />
+
     <TextView
         android:id="@+id/producto_id"
         android:layout_width="386dp"

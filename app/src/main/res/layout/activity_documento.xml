@@ -25,18 +25,21 @@
 
     <GridView
         android:id="@+id/tabla"
-        android:layout_width="370dp"
-        android:layout_height="375dp"
+        android:layout_width="378dp"
+        android:layout_height="365dp"
         android:layout_marginHorizontal="5dp"
         android:layout_marginVertical="5dp"
+        android:layout_marginBottom="28dp"
         android:columnWidth="150dp"
         android:horizontalSpacing="5dp"
         android:numColumns="4"
         android:verticalSpacing="5dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintHorizontal_bias="0.6"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
+        app:layout_constraintVertical_bias="1.0">
 
     </GridView>
 
@@ -65,20 +68,24 @@
         android:onClick="btn_coment"
         app:layout_constraintBottom_toTopOf="@+id/scrollView2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.954"
+        app:layout_constraintStart_toEndOf="@+id/tv_ubi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="100dp"
         android:layout_height="60dp"
 
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="24dp"
         android:text="Enviar"
 
         android:textColor="@color/Gray_100"
         app:layout_constraintBottom_toBottomOf="@+id/cancelar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/cancelar" />
+        app:layout_constraintTop_toTopOf="@+id/cancelar"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/cancelar"
@@ -90,12 +97,13 @@
         android:text="cancelar"
         android:textColor="@color/Gray_100"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/button2"
         app:layout_constraintTop_toBottomOf="@+id/tabla" />
 
     <Button
-        android:layout_width="57dp"
-        android:layout_height="47dp"
+        android:layout_width="68dp"
+        android:layout_height="57dp"
         android:layout_margin="16dp"
         android:layout_marginTop="16dp"
         android:background="@drawable/btn_filter_background"
@@ -109,10 +117,10 @@
         app:iconTint="@color/Gray_100"
         app:layout_constraintBottom_toTopOf="@+id/tabla"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintHorizontal_bias="0.066"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView2"
-        app:layout_constraintVertical_bias="0.435" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
